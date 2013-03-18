@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E09896B16F7484C005ED887 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09896A16F7484C005ED887 /* UIKit.framework */; };
+		4E09896D16F7484C005ED887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09896C16F7484C005ED887 /* Foundation.framework */; };
+		4E09896F16F7484C005ED887 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09896E16F7484C005ED887 /* CoreGraphics.framework */; };
+		4E09897516F7484C005ED887 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E09897316F7484C005ED887 /* InfoPlist.strings */; };
+		4E09897716F7484C005ED887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09897616F7484C005ED887 /* main.m */; };
+		4E09897B16F7484C005ED887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09897A16F7484C005ED887 /* AppDelegate.m */; };
+		4E09897D16F7484C005ED887 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E09897C16F7484C005ED887 /* Default.png */; };
+		4E09897F16F7484C005ED887 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E09897E16F7484C005ED887 /* Default@2x.png */; };
+		4E09898116F7484C005ED887 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E09898016F7484C005ED887 /* Default-568h@2x.png */; };
+		4E09898816F7486A005ED887 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09898716F7486A005ED887 /* CoreLocation.framework */; };
+		4E09898B16F748C6005ED887 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09898A16F748C6005ED887 /* MainViewController.m */; };
+		4E09898D16F749B9005ED887 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E09898C16F749B9005ED887 /* MainViewController.xib */; };
+		4E09899016F74FEB005ED887 /* LocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09898F16F74FEA005ED887 /* LocationEngine.m */; };
+		4E09899416F75CDA005ED887 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09899316F75CDA005ED887 /* libsqlite3.0.dylib */; };
+		4E09899716F75DDB005ED887 /* TrackPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899616F75DDB005ED887 /* TrackPoint.m */; };
+		4E09899A16F76181005ED887 /* TrackStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899916F76181005ED887 /* TrackStore.m */; };
+		4E09899E16F762E5005ED887 /* TrackPointStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899D16F762E5005ED887 /* TrackPointStore.m */; };
+		4E0989A116F764AA005ED887 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0989A016F764AA005ED887 /* Track.m */; };
+		4E0989A316F77659005ED887 /* locationlog.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A216F77658005ED887 /* locationlog.sqlite */; };
+		4E0989A516F77872005ED887 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A416F77872005ED887 /* README */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E09896716F7484C005ED887 /* LocationLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E09896A16F7484C005ED887 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4E09896C16F7484C005ED887 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4E09896E16F7484C005ED887 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4E09897216F7484C005ED887 /* LocationLog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationLog-Info.plist"; sourceTree = "<group>"; };
+		4E09897416F7484C005ED887 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4E09897616F7484C005ED887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4E09897816F7484C005ED887 /* LocationLog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationLog-Prefix.pch"; sourceTree = "<group>"; };
+		4E09897916F7484C005ED887 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4E09897A16F7484C005ED887 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4E09897C16F7484C005ED887 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4E09897E16F7484C005ED887 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4E09898016F7484C005ED887 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4E09898716F7486A005ED887 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4E09898916F748C6005ED887 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4E09898A16F748C6005ED887 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4E09898C16F749B9005ED887 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		4E09898E16F74FEA005ED887 /* LocationEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationEngine.h; sourceTree = "<group>"; };
+		4E09898F16F74FEA005ED887 /* LocationEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEngine.m; sourceTree = "<group>"; };
+		4E09899316F75CDA005ED887 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4E09899516F75DDB005ED887 /* TrackPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPoint.h; sourceTree = "<group>"; };
+		4E09899616F75DDB005ED887 /* TrackPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPoint.m; sourceTree = "<group>"; };
+		4E09899816F76181005ED887 /* TrackStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStore.h; sourceTree = "<group>"; };
+		4E09899916F76181005ED887 /* TrackStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStore.m; sourceTree = "<group>"; };
+		4E09899C16F762E5005ED887 /* TrackPointStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPointStore.h; sourceTree = "<group>"; };
+		4E09899D16F762E5005ED887 /* TrackPointStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPointStore.m; sourceTree = "<group>"; };
+		4E09899F16F764AA005ED887 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		4E0989A016F764AA005ED887 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		4E0989A216F77658005ED887 /* locationlog.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = locationlog.sqlite; sourceTree = "<group>"; };
+		4E0989A416F77872005ED887 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E09896416F7484C005ED887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E09899416F75CDA005ED887 /* libsqlite3.0.dylib in Frameworks */,
+				4E09898816F7486A005ED887 /* CoreLocation.framework in Frameworks */,
+				4E09896B16F7484C005ED887 /* UIKit.framework in Frameworks */,
+				4E09896D16F7484C005ED887 /* Foundation.framework in Frameworks */,
+				4E09896F16F7484C005ED887 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E09895E16F7484C005ED887 = {
+			isa = PBXGroup;
+			children = (
+				4E09899316F75CDA005ED887 /* libsqlite3.0.dylib */,
+				4E09897016F7484C005ED887 /* LocationLog */,
+				4E09896916F7484C005ED887 /* Frameworks */,
+				4E09896816F7484C005ED887 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E09896816F7484C005ED887 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E09896716F7484C005ED887 /* LocationLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E09896916F7484C005ED887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E09898716F7486A005ED887 /* CoreLocation.framework */,
+				4E09896A16F7484C005ED887 /* UIKit.framework */,
+				4E09896C16F7484C005ED887 /* Foundation.framework */,
+				4E09896E16F7484C005ED887 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E09897016F7484C005ED887 /* LocationLog */ = {
+			isa = PBXGroup;
+			children = (
+				4E09899B16F76188005ED887 /* Tracks */,
+				4E09897916F7484C005ED887 /* AppDelegate.h */,
+				4E09897A16F7484C005ED887 /* AppDelegate.m */,
+				4E09897116F7484C005ED887 /* Supporting Files */,
+				4E09898916F748C6005ED887 /* MainViewController.h */,
+				4E09898A16F748C6005ED887 /* MainViewController.m */,
+				4E09898C16F749B9005ED887 /* MainViewController.xib */,
+				4E09898E16F74FEA005ED887 /* LocationEngine.h */,
+				4E09898F16F74FEA005ED887 /* LocationEngine.m */,
+				4E0989A416F77872005ED887 /* README */,
+			);
+			path = LocationLog;
+			sourceTree = "<group>";
+		};
+		4E09897116F7484C005ED887 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E0989A216F77658005ED887 /* locationlog.sqlite */,
+				4E09897216F7484C005ED887 /* LocationLog-Info.plist */,
+				4E09897316F7484C005ED887 /* InfoPlist.strings */,
+				4E09897616F7484C005ED887 /* main.m */,
+				4E09897816F7484C005ED887 /* LocationLog-Prefix.pch */,
+				4E09897C16F7484C005ED887 /* Default.png */,
+				4E09897E16F7484C005ED887 /* Default@2x.png */,
+				4E09898016F7484C005ED887 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E09899B16F76188005ED887 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				4E09899516F75DDB005ED887 /* TrackPoint.h */,
+				4E09899616F75DDB005ED887 /* TrackPoint.m */,
+				4E09899816F76181005ED887 /* TrackStore.h */,
+				4E09899916F76181005ED887 /* TrackStore.m */,
+				4E09899C16F762E5005ED887 /* TrackPointStore.h */,
+				4E09899D16F762E5005ED887 /* TrackPointStore.m */,
+				4E09899F16F764AA005ED887 /* Track.h */,
+				4E0989A016F764AA005ED887 /* Track.m */,
+			);
+			name = Tracks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E09896616F7484C005ED887 /* LocationLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E09898416F7484C005ED887 /* Build configuration list for PBXNativeTarget "LocationLog" */;
+			buildPhases = (
+				4E09896316F7484C005ED887 /* Sources */,
+				4E09896416F7484C005ED887 /* Frameworks */,
+				4E09896516F7484C005ED887 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocationLog;
+			productName = LocationLog;
+			productReference = 4E09896716F7484C005ED887 /* LocationLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E09895F16F7484C005ED887 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Parkmeadow Productions";
+			};
+			buildConfigurationList = 4E09896216F7484C005ED887 /* Build configuration list for PBXProject "LocationLog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4E09895E16F7484C005ED887;
+			productRefGroup = 4E09896816F7484C005ED887 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E09896616F7484C005ED887 /* LocationLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E09896516F7484C005ED887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E09897516F7484C005ED887 /* InfoPlist.strings in Resources */,
+				4E09897D16F7484C005ED887 /* Default.png in Resources */,
+				4E09897F16F7484C005ED887 /* Default@2x.png in Resources */,
+				4E09898116F7484C005ED887 /* Default-568h@2x.png in Resources */,
+				4E09898D16F749B9005ED887 /* MainViewController.xib in Resources */,
+				4E0989A316F77659005ED887 /* locationlog.sqlite in Resources */,
+				4E0989A516F77872005ED887 /* README in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E09896316F7484C005ED887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E09897716F7484C005ED887 /* main.m in Sources */,
+				4E09897B16F7484C005ED887 /* AppDelegate.m in Sources */,
+				4E09898B16F748C6005ED887 /* MainViewController.m in Sources */,
+				4E09899016F74FEB005ED887 /* LocationEngine.m in Sources */,
+				4E09899716F75DDB005ED887 /* TrackPoint.m in Sources */,
+				4E09899A16F76181005ED887 /* TrackStore.m in Sources */,
+				4E09899E16F762E5005ED887 /* TrackPointStore.m in Sources */,
+				4E0989A116F764AA005ED887 /* Track.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E09897316F7484C005ED887 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E09897416F7484C005ED887 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E09898216F7484C005ED887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4E09898316F7484C005ED887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E09898516F7484C005ED887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LocationLog/LocationLog-Prefix.pch";
+				INFOPLIST_FILE = "LocationLog/LocationLog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4E09898616F7484C005ED887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LocationLog/LocationLog-Prefix.pch";
+				INFOPLIST_FILE = "LocationLog/LocationLog-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E09896216F7484C005ED887 /* Build configuration list for PBXProject "LocationLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E09898216F7484C005ED887 /* Debug */,
+				4E09898316F7484C005ED887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E09898416F7484C005ED887 /* Build configuration list for PBXNativeTarget "LocationLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E09898516F7484C005ED887 /* Debug */,
+				4E09898616F7484C005ED887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E09895F16F7484C005ED887 /* Project object */;
+}
