@@ -9,6 +9,7 @@
 #import "TrackPointStore.h"
 #import "TrackPoint.h"
 #import "Track.h"
+#import "LocationLogDB.h"
 
 @implementation TrackPointStore
 
@@ -48,6 +49,8 @@
                                                  altitude:[location altitude]
                                                 timestamp:[location timestamp]
                                                     track:track];
+    
+    [point setKey:[[LocationLogDB instance] addTrackPoint:point]];
     [points addObject:point];
 }
 

@@ -27,6 +27,7 @@
 		4E0989A116F764AA005ED887 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0989A016F764AA005ED887 /* Track.m */; };
 		4E0989A316F77659005ED887 /* locationlog.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A216F77658005ED887 /* locationlog.sqlite */; };
 		4E0989A516F77872005ED887 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A416F77872005ED887 /* README */; };
+		C3D049FE16F7ECB60015395E /* LocationLogDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D049FD16F7ECB60015395E /* LocationLogDB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		4E0989A016F764AA005ED887 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		4E0989A216F77658005ED887 /* locationlog.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = locationlog.sqlite; sourceTree = "<group>"; };
 		4E0989A416F77872005ED887 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		C3D049FC16F7ECB60015395E /* LocationLogDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationLogDB.h; sourceTree = "<group>"; };
+		C3D049FD16F7ECB60015395E /* LocationLogDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationLogDB.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		4E09897016F7484C005ED887 /* LocationLog */ = {
 			isa = PBXGroup;
 			children = (
+				C3D049FB16F7EC960015395E /* Database */,
 				4E09899B16F76188005ED887 /* Tracks */,
 				4E09897916F7484C005ED887 /* AppDelegate.h */,
 				4E09897A16F7484C005ED887 /* AppDelegate.m */,
@@ -152,6 +156,15 @@
 				4E0989A016F764AA005ED887 /* Track.m */,
 			);
 			name = Tracks;
+			sourceTree = "<group>";
+		};
+		C3D049FB16F7EC960015395E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C3D049FC16F7ECB60015395E /* LocationLogDB.h */,
+				C3D049FD16F7ECB60015395E /* LocationLogDB.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +243,7 @@
 				4E09899A16F76181005ED887 /* TrackStore.m in Sources */,
 				4E09899E16F762E5005ED887 /* TrackPointStore.m in Sources */,
 				4E0989A116F764AA005ED887 /* Track.m in Sources */,
+				C3D049FE16F7ECB60015395E /* LocationLogDB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +358,7 @@
 				4E09898616F7484C005ED887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

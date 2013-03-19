@@ -11,5 +11,7 @@
 @implementation Track
 
 @synthesize key;
+@synthesize timestamp;
+@synthesize description;
 
 @end

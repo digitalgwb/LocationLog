@@ -3,3 +3,22 @@ See the tutorial at
 http://www.icodeblog.com/2008/08/19/iphone-programming-tutorial-creating-a-todo-list-using-sqlite-part-1/
 
 for methods and information on using SQLLite3 in an iPhone app
+
+Table Creation
+
+CREATE TABLE tracks (
+   key INTEGER PRIMARY KEY AUTOINCREMENT,
+   timestamp DATETIME,
+   description VARCHAR(60)
+   );
+   
+
+CREATE TABLE points (
+   key INTEGER PRIMARY KEY AUTOINCREMENT,
+   timestamp DATETIME,
+   latitude NUMERIC,
+   longitude NUMERIC,
+   course NUMERIC,
+   speed NUMERIC,
+   altitude NUMERIC
+   );

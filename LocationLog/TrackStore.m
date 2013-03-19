@@ -8,6 +8,7 @@
 
 #import "TrackStore.h"
 #import "Track.h"
+#import "LocationLogDB.h"
 
 @implementation TrackStore
 
@@ -42,6 +43,9 @@
 - (Track*)createTrack
 {
     Track* track = [[Track alloc] init];
+    [track setTimestamp:[NSDate date]];
+    [track setKey:[[LocationLogDB instance] addTrack:track]];
+    
     [tracks addObject:track];
     
     return track;

@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Track : NSObject
-{
-    int key;
-    NSDate* timestamp;
-    NSString* description;
-}
+
+@property NSInteger key;
+@property (weak, atomic) NSDate* timestamp;
+@property (weak, atomic) NSString* description;
 
 @end

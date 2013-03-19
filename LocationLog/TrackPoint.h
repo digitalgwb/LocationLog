@@ -12,20 +12,14 @@
 @class Track;
 
 @interface TrackPoint : NSObject
-{
-    int key;
-    
-    CLLocationDegrees latitude;
-    CLLocationDegrees longitude;
-    
-    CLLocationDirection course;
-    CLLocationSpeed speed;
-    CLLocationDistance altitude;
-    
-    NSDate* timestamp;
-    
-    NSString* trackKey;
-}
+
+@property CLLocationDegrees latitude;
+@property CLLocationDegrees longitude;
+@property CLLocationDirection course;
+@property CLLocationSpeed speed;
+@property CLLocationDistance altitude;
+@property (strong, atomic) NSDate* timestamp;
+@property NSInteger key;
 
 - (id)initWithPoint:(CLLocationCoordinate2D)point
              course:(CLLocationDirection)course

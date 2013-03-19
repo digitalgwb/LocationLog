@@ -11,6 +11,14 @@
 
 @implementation TrackPoint
 
+@synthesize latitude;
+@synthesize longitude;
+@synthesize course;
+@synthesize speed;
+@synthesize altitude;
+@synthesize timestamp;
+@synthesize key;
+
 - (id)initWithPoint:(CLLocationCoordinate2D)point
              course:(CLLocationDirection)pCourse
               speed:(CLLocationSpeed)pSpeed
@@ -27,7 +35,7 @@
         speed = pSpeed;
         altitude = pAltitude;
         timestamp = [pTimestamp copy];
-        trackKey = [pTrack key];
+        key = [pTrack key];
     }
     
     return self;
