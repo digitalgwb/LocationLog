@@ -13,14 +13,26 @@
 {
     sqlite3 *db;
     NSString *documentsDirectory;
+    NSString *databaseName;
+    sqlite3_stmt *statement;
 }
 
-+ (Database *)instance;
-
-- (BOOL)create:(NSString *)dbName replace:(BOOL)replace;
-- (BOOL)open:(NSString *)dbFilePath;
+- (id)init:(NSString *)dbName;
+- (BOOL)open:(BOOL)create;
 - (BOOL)close;
-- (BOOL)createTracksTable;
-- (BOOL)createPointsTable;
+- (BOOL)createTables;
+- (BOOL)createTable:(NSString *)name withColumns:(NSArray *)columns;
+- (BOOL)dropTables;
+- (BOOL)dropTable:(NSString *)name;
+- (BOOL)resetTables;
+- (BOOL)resetTable:(NSString *)name;
+
+- (BOOL)prepareStatement:(NSString *)sql;
+- (BOOL)bind:(int)column datetimeValue:(NSDate *)value;
+- (BOOL)bind:(int)column doubleValue:(double)value;
+- (BOOL)step;
+- (BOOL)finalize;
+- (BOOL)stepAndFinalize;
+- (int)insertedRow;
 
 @end
