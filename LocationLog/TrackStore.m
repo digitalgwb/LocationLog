@@ -2,52 +2,59 @@
 //  TrackStore.m
 //  LocationLog
 //
-//  Created by sasgwb on 3/18/13.
+//  Created by sasgwb on 3/22/13.
 //  Copyright (c) 2013 Parkmeadow Productions. All rights reserved.
 //
 
 #import "TrackStore.h"
-#import "Track.h"
-#import "LocationLogDB.h"
+#import "LocationLogDatabase.h"
 
 @implementation TrackStore
 
-+ (TrackStore*)instance
++ (TrackStore *)sharedStore
 {
-    static TrackStore *instance = nil;
+    static TrackStore *sharedStore = nil;
     
-    if (!instance)
+    if (!sharedStore)
     {
-        instance = [[super allocWithZone:nil] init];
+        sharedStore = [[super allocWithZone:nil] init];
     }
     
-    return instance;
+    return sharedStore;
 }
 
-+ (id)allocWithZone:(NSZone*)zone
++ (id)allocWithZone:(NSZone *)zone;
 {
-    return [self instance];
+    return [self sharedStore];
 }
 
 - (id)init
 {
     self = [super init];
+    
     if (self)
     {
-        tracks = [[NSMutableArray alloc] init];
+        arrTracks = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
-- (Track*)createTrack
+- (NSArray *)tracks
 {
-    Track* track = [[Track alloc] init];
-    [track setTimestamp:[NSDate date]];
-    [track setKey:[[LocationLogDB instance] addTrack:track]];
+    return arrTracks;
+}
+
+- (void)initialize
+{
+    NSArray* dbTracks = [[LocationLogDatabase instance] getTracks];
+    [arrTracks removeAllObjects];
     
-    [tracks addObject:track];
+    for (int i = 0; i < [dbTracks count]; i++)
+    {
+        [arrTracks addObject:[dbTracks objectAtIndex:i]];
+    }
     
-    return track;
+    int i = [arrTracks count];
 }
 @end

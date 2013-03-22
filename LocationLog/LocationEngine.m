@@ -7,9 +7,8 @@
 //
 
 #import "LocationEngine.h"
+#import "LocationLogDatabase.h"
 #import "TrackPoint.h"
-#import "TrackPointStore.h"
-#import "TrackStore.h"
 #import "Track.h"
 
 @implementation LocationEngine
@@ -49,7 +48,8 @@
  */
 - (void)start
 {
-    currentTrack = [[TrackStore instance] createTrack];
+    currentTrack = [[Track alloc] init];
+    [currentTrack setKey:[[LocationLogDatabase instance] insertTrack:currentTrack]];
     [locationManager startUpdatingLocation];
 }
 
@@ -74,9 +74,7 @@
     for (int i = 0; i < [locations count]; i++)
     {
         CLLocation* location = [locations objectAtIndex:i];
-        
-        [[TrackPointStore instance] addPoint:location forTrack:currentTrack];
-        
+        [[LocationLogDatabase instance] insertPoint:[[TrackPoint alloc] initWithLocation:location track:currentTrack]];
     }
 }
 @end

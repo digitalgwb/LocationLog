@@ -29,4 +29,6 @@
           timestamp:(NSDate*)timestamp
               track:(Track*)track;
 
+- (id)initWithLocation:(CLLocation *)location track:(Track *)track;
+
 @end

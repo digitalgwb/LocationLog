@@ -11,7 +11,7 @@
 @interface Track : NSObject
 
 @property NSInteger key;
-@property (weak, atomic) NSDate* timestamp;
-@property (weak, atomic) NSString* description;
+@property (strong, atomic) NSDate* timestamp;
+@property (strong, atomic) NSString* description;
 
 @end

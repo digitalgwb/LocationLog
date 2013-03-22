@@ -66,21 +66,24 @@
 {
     int key = -1;
 
-    [self beginTransaction];
     
     // Insert a new Track into the Tracks database
-    if ([self prepareStatement:@"INSERT INTO tracks(timestamp) VALUES(?)"]  &&
-        [self bind:1 datetimeValue:[track timestamp]] &&
-        [self stepAndFinalize])
+    if (([self prepareStatement:@"INSERT INTO tracks(timestamp) VALUES(?)"] == YES) &&
+        ([self bind:1 datetimeValue:[track timestamp]] == YES))
     {
-        [self commitTransaction];
-        key = [self insertedRow];
+        [self beginTransaction];
+        if ([self step] == SQLITE_DONE)
+        {
+            [self commitTransaction];
+            key = [self insertedRow];
+        }
+        else
+        {
+            [self rollbackTransaction];
+        }
     }
-    else
-    {
-        [self rollbackTransaction];
-        [self finalize];
-    }
+    
+    [self finalize];
     
     return key;
 }
@@ -93,27 +96,44 @@
 {
     BOOL rc = NO;
     
-    [self beginTransaction];
-    
     if ([self prepareStatement:@"DELETE FROM tracks where key=?"] &&
-        [self bind:1 intValue:[track key]] &&
-        [self stepAndFinalize] &&
-        [self prepareStatement:@"DELETE FROM points where track=?"] &&
-        [self bind:1 intValue:[track key]] &&
-        [self stepAndFinalize])
+        [self bind:1 intValue:[track key]])
     {
-        rc = YES;
+        [self beginTransaction];
+        if ([self step] == SQLITE_DONE)
+        {
+            [self commitTransaction];
+            rc = YES;
+        }
+        else {
+            [self rollbackTransaction];
+        }
     }
     
+    [self finalize];
+
     if (rc == YES)
     {
-        [self commitTransaction];
+        rc = NO;
+
+        if ([self prepareStatement:@"DELETE FROM points where track=?"] &&
+            [self bind:1 intValue:[track key]])
+        {
+        
+            [self beginTransaction];
+            if ([self step] == SQLITE_DONE)
+            {
+                [self commitTransaction];
+                rc = YES;
+            }
+            else {
+                [self rollbackTransaction];
+            }
+        }
+
+        [self finalize];
     }
-    else
-    {
-        [self rollbackTransaction];
-    }
-    
+
     return rc;
 }
 
@@ -140,6 +160,30 @@
     [self finalize];
     
     return track;
+}
+
+- (NSArray *)getTracks
+{
+    NSMutableArray *tracks = [[NSMutableArray alloc] init];
+    
+    [self prepareStatement:@"SELECT * FROM tracks ORDER BY timestamp"];
+    int rc = [self step];
+    
+    while (rc != SQLITE_DONE)
+    {
+        Track *track = [[Track alloc] init];
+        [track setKey:[self intColumn:1]];
+        [track setDescription:[self textColumn:2]];
+        [track setTimestamp:[self datetimeColumn:3]];
+        
+        [tracks addObject:track];
+        
+        rc = [self step];
+    }
+    
+    [self finalize];
+    
+    return tracks;
 }
 
 /*
@@ -201,28 +245,30 @@
 {
     int key = -1;
     
-    [self beginTransaction];
-    
-    if ([self prepareStatement:@"INSERT INTO points(timestamp, latitude, longitude, course, speed, altitude) VALUES(?,?,?,?,?,?)"] &&
+    if ([self prepareStatement:@"INSERT INTO points(timestamp, latitude, longitude, course, speed, altitude, track) VALUES(?,?,?,?,?,?,?)"] &&
         [self bind:1 datetimeValue:[point timestamp]] &&
         [self bind:2 doubleValue:[point latitude]] &&
         [self bind:3 doubleValue:[point longitude]] &&
         [self bind:4 doubleValue:[point course]] &&
         [self bind:5 doubleValue:[point speed]] &&
         [self bind:6 doubleValue:[point altitude]] &&
-        [self stepAndFinalize])
+        [self bind:7 intValue:[point track]])
     {
-        [self commitTransaction];
-        key = [self insertedRow];
+        [self beginTransaction];
+        if ([self step] == SQLITE_DONE)
+        {
+            [self commitTransaction];
+            key = [self insertedRow];
+        }
+        else
+        {
+            [self rollbackTransaction];
+        }
     }
-    else
-    {
-        [self rollbackTransaction];
-        [self finalize];
-    }
-    
+
+    [self finalize];
+
     return key;
-    
 }
 
 /*
@@ -233,23 +279,23 @@
 {
     BOOL rc = NO;
     
-    [self beginTransaction];
-    
     if ([self prepareStatement:@"DELETE FROM points where key=?"] &&
-        [self bind:1 intValue:[point key]] &&
-        [self stepAndFinalize])
+        [self bind:1 intValue:[point key]])
     {
-        rc = YES;
+        [self beginTransaction];
+        
+        if ([self step] == SQLITE_DONE)
+        {
+            [self commitTransaction];
+            rc = YES;
+        }
+        else
+        {
+            [self rollbackTransaction];
+        }
     }
     
-    if (rc == YES)
-    {
-        [self commitTransaction];
-    }
-    else
-    {
-        [self rollbackTransaction];
-    }
+    [self finalize];
     
     return rc;
 }

@@ -1,5 +1,5 @@
 //
-//  TrackStore.h
+//  TrackTableViewController.h
 //  LocationLog
 //
 //  Created by sasgwb on 3/22/13.
@@ -8,14 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TrackStore : NSObject
-{
-    NSMutableArray *arrTracks;
-}
-
-+ (TrackStore *)sharedStore;
-
-- (NSArray *)tracks;
-- (void)initialize;
+@interface TrackTableViewController : UITableViewController
 
 @end

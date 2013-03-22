@@ -14,4 +14,14 @@
 @synthesize timestamp;
 @synthesize description;
 
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        [self setTimestamp:[NSDate date]];
+    }
+    
+    return self;
+}
 @end

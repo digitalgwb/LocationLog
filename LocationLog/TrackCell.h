@@ -1,5 +1,5 @@
 //
-//  TrackStore.h
+//  TrackCell.h
 //  LocationLog
 //
 //  Created by sasgwb on 3/22/13.
@@ -8,14 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TrackStore : NSObject
-{
-    NSMutableArray *arrTracks;
-}
+@interface TrackCell : UITableViewCell
 
-+ (TrackStore *)sharedStore;
-
-- (NSArray *)tracks;
-- (void)initialize;
+@property (weak, nonatomic) IBOutlet UILabel *timestamp;
 
 @end

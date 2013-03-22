@@ -71,7 +71,7 @@
     }
     
     // If the create flag is YES then create the tables
-    if (create == YES)
+    if ((create == YES) || (exists == NO))
     {
         // Database was successfully created - now create tables
         
@@ -167,44 +167,62 @@
 - (void)beginTransaction
 {
     char *error;
-    sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &error);
+    int rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &error);
+    if (rc != SQLITE_OK)
+    {
+        NSLog(@"%@", [NSString stringWithUTF8String:error]);
+    }
 }
 
 - (void)commitTransaction
 {
     char *error;
-    sqlite3_exec(db, "COMMIT;", NULL, NULL, &error);
+    int rc = sqlite3_exec(db, "COMMIT;", NULL, NULL, &error);
+    if (rc != SQLITE_OK)
+    {
+        NSLog(@"%@", [NSString stringWithUTF8String:error]);
+    }
 }
 
 - (void)rollbackTransaction
 {
     char *error;
-    sqlite3_exec(db, "ROLLBACK;", NULL, NULL, &error);
+    int rc = sqlite3_exec(db, "ROLLBACK;", NULL, NULL, &error);
+    if (rc != SQLITE_OK)
+    {
+        NSLog(@"%@", [NSString stringWithUTF8String:error]);
+    }
 }
 
 - (BOOL)prepareStatement:(NSString *)sql
 {
-    return sqlite3_prepare(db, [sql UTF8String], -1, &statement, NULL);
+    int rc = sqlite3_prepare(db, [sql UTF8String], -1, &statement, NULL);
+    if (rc != SQLITE_OK)
+    {
+        NSLog(@"RC = %d", rc);
+    }
+    
+    return (rc == SQLITE_OK);
 }
 
 - (BOOL)bind:(int)column datetimeValue:(NSDate *)value
 {
-    return sqlite3_bind_int(statement, column, [value timeIntervalSince1970]);
+    return (sqlite3_bind_int(statement, column, [value timeIntervalSince1970]) == SQLITE_OK);
 }
 
 - (BOOL)bind:(int)column doubleValue:(double)value
 {
-    return sqlite3_bind_double(statement, column, value);
+    return (sqlite3_bind_double(statement, column, value) == SQLITE_OK);
 }
 
 - (BOOL)bind:(int)column intValue:(int)value
 {
-    return sqlite3_bind_int(statement, column, value);
+    return (sqlite3_bind_int(statement, column, value) == SQLITE_OK);
 }
 
 - (BOOL)bind:(int)column textValue:(NSString *)value
 {
-    return sqlite3_bind_text(statement, column, [value UTF8String], -1, SQLITE_TRANSIENT);
+    return (sqlite3_bind_text(statement, column, [value UTF8String], -1, SQLITE_TRANSIENT) == SQLITE_OK);
 }
 
 - (int)step
@@ -214,12 +232,12 @@
 
 - (BOOL)finalize
 {
-    return sqlite3_finalize(statement);
+    return (sqlite3_finalize(statement) == SQLITE_OK);
 }
 
-- (BOOL)stepAndFinalize
+- (int)stepAndFinalize
 {
-    BOOL rc = sqlite3_step(statement);
+    int rc = sqlite3_step(statement);
     sqlite3_finalize(statement);
     
     return rc;
@@ -249,6 +267,13 @@
 - (NSString *)textColumn:(int)column
 {
     const unsigned char *c = sqlite3_column_text(statement, column);
-    return [NSString stringWithUTF8String:(char *)c];
+    if (c == NULL)
+    {
+        return @"";
+    }
+    else
+    {
+        return [NSString stringWithUTF8String:(char *)c];
+    }
 }
 @end

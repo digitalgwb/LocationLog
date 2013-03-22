@@ -20,6 +20,7 @@
 - (BOOL)deleteTrack:(Track *)track;
 - (Track *)findTrack:(int)key;
 - (NSArray *)findPointsForTrack:(int)key;
+- (NSArray *)getTracks;
 
 - (BOOL)createTablePoints;
 - (int)insertPoint:(TrackPoint *)point;

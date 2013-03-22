@@ -34,7 +34,7 @@
 - (BOOL)bind:(int)column textValue:(NSString *)value;
 - (int)step;
 - (BOOL)finalize;
-- (BOOL)stepAndFinalize;
+- (int)stepAndFinalize;
 - (int)insertedRow;
 
 - (void)beginTransaction;

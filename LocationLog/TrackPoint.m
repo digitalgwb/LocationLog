@@ -41,4 +41,21 @@
     
     return self;
 }
+
+- (id)initWithLocation:(CLLocation *)location track:(Track *)t
+{
+    self = [super init];
+    if (self)
+    {
+        latitude = [location coordinate].latitude;
+        longitude = [location coordinate].longitude;
+        course = [location course];
+        speed = [location speed];
+        altitude = [location altitude];
+        timestamp = [[location timestamp] copy];
+        track = [t key];
+    }
+    
+    return self;
+}
 @end

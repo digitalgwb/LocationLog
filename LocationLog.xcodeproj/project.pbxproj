@@ -22,14 +22,14 @@
 		4E09899016F74FEB005ED887 /* LocationEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09898F16F74FEA005ED887 /* LocationEngine.m */; };
 		4E09899416F75CDA005ED887 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E09899316F75CDA005ED887 /* libsqlite3.0.dylib */; };
 		4E09899716F75DDB005ED887 /* TrackPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899616F75DDB005ED887 /* TrackPoint.m */; };
-		4E09899A16F76181005ED887 /* TrackStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899916F76181005ED887 /* TrackStore.m */; };
-		4E09899E16F762E5005ED887 /* TrackPointStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E09899D16F762E5005ED887 /* TrackPointStore.m */; };
 		4E0989A116F764AA005ED887 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0989A016F764AA005ED887 /* Track.m */; };
-		4E0989A316F77659005ED887 /* locationlog.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A216F77658005ED887 /* locationlog.sqlite */; };
 		4E0989A516F77872005ED887 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4E0989A416F77872005ED887 /* README */; };
+		4E26B44D16FCCF77009B584A /* TrackTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E26B44C16FCCF77009B584A /* TrackTableViewController.m */; };
+		4E26B45016FCD18F009B584A /* TrackStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E26B44F16FCD18F009B584A /* TrackStore.m */; };
+		4E26B45216FCD4E6009B584A /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E26B45116FCD4E6009B584A /* TrackCell.xib */; };
+		4E26B45516FCD536009B584A /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E26B45416FCD536009B584A /* TrackCell.m */; };
 		4E86137116FB3C16003228D6 /* LocationLogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86137016FB3C16003228D6 /* LocationLogDatabase.m */; };
 		C372CF2516FAAD6200F1D2F6 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = C372CF2416FAAD6200F1D2F6 /* Database.m */; };
-		C3D049FE16F7ECB60015395E /* LocationLogDB.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D049FD16F7ECB60015395E /* LocationLogDB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,20 +55,20 @@
 		4E09899316F75CDA005ED887 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4E09899516F75DDB005ED887 /* TrackPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPoint.h; sourceTree = "<group>"; };
 		4E09899616F75DDB005ED887 /* TrackPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPoint.m; sourceTree = "<group>"; };
-		4E09899816F76181005ED887 /* TrackStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStore.h; sourceTree = "<group>"; };
-		4E09899916F76181005ED887 /* TrackStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStore.m; sourceTree = "<group>"; };
-		4E09899C16F762E5005ED887 /* TrackPointStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPointStore.h; sourceTree = "<group>"; };
-		4E09899D16F762E5005ED887 /* TrackPointStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPointStore.m; sourceTree = "<group>"; };
 		4E09899F16F764AA005ED887 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		4E0989A016F764AA005ED887 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
-		4E0989A216F77658005ED887 /* locationlog.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = locationlog.sqlite; sourceTree = "<group>"; };
 		4E0989A416F77872005ED887 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4E26B44B16FCCF77009B584A /* TrackTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackTableViewController.h; sourceTree = "<group>"; };
+		4E26B44C16FCCF77009B584A /* TrackTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackTableViewController.m; sourceTree = "<group>"; };
+		4E26B44E16FCD18F009B584A /* TrackStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackStore.h; sourceTree = "<group>"; };
+		4E26B44F16FCD18F009B584A /* TrackStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackStore.m; sourceTree = "<group>"; };
+		4E26B45116FCD4E6009B584A /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		4E26B45316FCD536009B584A /* TrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCell.h; sourceTree = "<group>"; };
+		4E26B45416FCD536009B584A /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		4E86136F16FB3C16003228D6 /* LocationLogDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationLogDatabase.h; sourceTree = "<group>"; };
 		4E86137016FB3C16003228D6 /* LocationLogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationLogDatabase.m; sourceTree = "<group>"; };
 		C372CF2316FAAD6200F1D2F6 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		C372CF2416FAAD6200F1D2F6 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
-		C3D049FC16F7ECB60015395E /* LocationLogDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationLogDB.h; sourceTree = "<group>"; };
-		C3D049FD16F7ECB60015395E /* LocationLogDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationLogDB.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +130,11 @@
 				4E09898E16F74FEA005ED887 /* LocationEngine.h */,
 				4E09898F16F74FEA005ED887 /* LocationEngine.m */,
 				4E0989A416F77872005ED887 /* README */,
+				4E26B44B16FCCF77009B584A /* TrackTableViewController.h */,
+				4E26B44C16FCCF77009B584A /* TrackTableViewController.m */,
+				4E26B45116FCD4E6009B584A /* TrackCell.xib */,
+				4E26B45316FCD536009B584A /* TrackCell.h */,
+				4E26B45416FCD536009B584A /* TrackCell.m */,
 			);
 			path = LocationLog;
 			sourceTree = "<group>";
@@ -137,7 +142,6 @@
 		4E09897116F7484C005ED887 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E0989A216F77658005ED887 /* locationlog.sqlite */,
 				4E09897216F7484C005ED887 /* LocationLog-Info.plist */,
 				4E09897316F7484C005ED887 /* InfoPlist.strings */,
 				4E09897616F7484C005ED887 /* main.m */,
@@ -154,12 +158,10 @@
 			children = (
 				4E09899516F75DDB005ED887 /* TrackPoint.h */,
 				4E09899616F75DDB005ED887 /* TrackPoint.m */,
-				4E09899816F76181005ED887 /* TrackStore.h */,
-				4E09899916F76181005ED887 /* TrackStore.m */,
-				4E09899C16F762E5005ED887 /* TrackPointStore.h */,
-				4E09899D16F762E5005ED887 /* TrackPointStore.m */,
 				4E09899F16F764AA005ED887 /* Track.h */,
 				4E0989A016F764AA005ED887 /* Track.m */,
+				4E26B44E16FCD18F009B584A /* TrackStore.h */,
+				4E26B44F16FCD18F009B584A /* TrackStore.m */,
 			);
 			name = Tracks;
 			sourceTree = "<group>";
@@ -169,8 +171,6 @@
 			children = (
 				C372CF2316FAAD6200F1D2F6 /* Database.h */,
 				C372CF2416FAAD6200F1D2F6 /* Database.m */,
-				C3D049FC16F7ECB60015395E /* LocationLogDB.h */,
-				C3D049FD16F7ECB60015395E /* LocationLogDB.m */,
 				4E86136F16FB3C16003228D6 /* LocationLogDatabase.h */,
 				4E86137016FB3C16003228D6 /* LocationLogDatabase.m */,
 			);
@@ -233,8 +233,8 @@
 				4E09897F16F7484C005ED887 /* Default@2x.png in Resources */,
 				4E09898116F7484C005ED887 /* Default-568h@2x.png in Resources */,
 				4E09898D16F749B9005ED887 /* MainViewController.xib in Resources */,
-				4E0989A316F77659005ED887 /* locationlog.sqlite in Resources */,
 				4E0989A516F77872005ED887 /* README in Resources */,
+				4E26B45216FCD4E6009B584A /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +250,12 @@
 				4E09898B16F748C6005ED887 /* MainViewController.m in Sources */,
 				4E09899016F74FEB005ED887 /* LocationEngine.m in Sources */,
 				4E09899716F75DDB005ED887 /* TrackPoint.m in Sources */,
-				4E09899A16F76181005ED887 /* TrackStore.m in Sources */,
-				4E09899E16F762E5005ED887 /* TrackPointStore.m in Sources */,
 				4E0989A116F764AA005ED887 /* Track.m in Sources */,
-				C3D049FE16F7ECB60015395E /* LocationLogDB.m in Sources */,
 				C372CF2516FAAD6200F1D2F6 /* Database.m in Sources */,
 				4E86137116FB3C16003228D6 /* LocationLogDatabase.m in Sources */,
+				4E26B44D16FCCF77009B584A /* TrackTableViewController.m in Sources */,
+				4E26B45016FCD18F009B584A /* TrackStore.m in Sources */,
+				4E26B45516FCD536009B584A /* TrackCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
