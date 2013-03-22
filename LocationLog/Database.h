@@ -30,9 +30,20 @@
 - (BOOL)prepareStatement:(NSString *)sql;
 - (BOOL)bind:(int)column datetimeValue:(NSDate *)value;
 - (BOOL)bind:(int)column doubleValue:(double)value;
-- (BOOL)step;
+- (BOOL)bind:(int)column intValue:(int)value;
+- (BOOL)bind:(int)column textValue:(NSString *)value;
+- (int)step;
 - (BOOL)finalize;
 - (BOOL)stepAndFinalize;
 - (int)insertedRow;
+
+- (void)beginTransaction;
+- (void)commitTransaction;
+- (void)rollbackTransaction;
+
+- (int)intColumn:(int)column;
+- (double)doubleColumn:(int)column;
+- (NSString *)textColumn:(int)column;
+- (NSDate *)datetimeColumn:(int)column;
 
 @end

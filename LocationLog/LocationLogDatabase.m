@@ -66,19 +66,113 @@
 {
     int key = -1;
 
+    [self beginTransaction];
+    
     // Insert a new Track into the Tracks database
     if ([self prepareStatement:@"INSERT INTO tracks(timestamp) VALUES(?)"]  &&
         [self bind:1 datetimeValue:[track timestamp]] &&
         [self stepAndFinalize])
     {
+        [self commitTransaction];
         key = [self insertedRow];
     }
     else
     {
+        [self rollbackTransaction];
         [self finalize];
     }
     
     return key;
+}
+
+/*
+ * Delete a track from the TRACKS table, along with its associated points from the POINTS table
+ * Returns YES if successful, NO otherwise
+ */
+- (BOOL)deleteTrack:(Track *)track
+{
+    BOOL rc = NO;
+    
+    [self beginTransaction];
+    
+    if ([self prepareStatement:@"DELETE FROM tracks where key=?"] &&
+        [self bind:1 intValue:[track key]] &&
+        [self stepAndFinalize] &&
+        [self prepareStatement:@"DELETE FROM points where track=?"] &&
+        [self bind:1 intValue:[track key]] &&
+        [self stepAndFinalize])
+    {
+        rc = YES;
+    }
+    
+    if (rc == YES)
+    {
+        [self commitTransaction];
+    }
+    else
+    {
+        [self rollbackTransaction];
+    }
+    
+    return rc;
+}
+
+/*
+ * Find a Track with the given key
+ * Returns a Track instance, or nil if no instance was found
+ */
+- (Track *)findTrack:(int)key
+{
+    Track *track = nil;
+    
+    [self prepareStatement:@"SELECT * FROM tracks where key=?"];
+    [self bind:1 intValue:key];
+    int rc = [self step];
+    
+    if (rc == SQLITE_DONE)
+    {
+        track = [[Track alloc] init];
+        [track setKey:[self intColumn:1]];
+        [track setDescription:[self textColumn:2]];
+        [track setTimestamp:[self datetimeColumn:3]];
+    }
+    
+    [self finalize];
+    
+    return track;
+}
+
+/*
+ * Retrieve an array of TrackPoint instances for a given track
+ * Returns an NSArray of TrackPoint instances, empty if none was found
+ */
+- (NSArray *)findPointsForTrack:(int)key
+{
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    
+    [self prepareStatement:@"SELECT * FROM points where track=?"];
+    [self bind:1 intValue:key];
+    int rc = [self step];
+    
+    while (rc != SQLITE_DONE)
+    {
+        TrackPoint *point = [[TrackPoint alloc] init];
+        [point setKey:[self intColumn:1]];
+        [point setTimestamp:[self datetimeColumn:2]];
+        [point setLatitude:[self doubleColumn:3]];
+        [point setLongitude:[self doubleColumn:4]];
+        [point setCourse:[self doubleColumn:5]];
+        [point setSpeed:[self doubleColumn:6]];
+        [point setAltitude:[self doubleColumn:7]];
+        [point setTrack:[self intColumn:8]];
+        
+        [array addObject:point];
+        rc = [self step];
+    }
+    
+    [self finalize];
+    
+    return array;
 }
 
 /*
@@ -107,6 +201,8 @@
 {
     int key = -1;
     
+    [self beginTransaction];
+    
     if ([self prepareStatement:@"INSERT INTO points(timestamp, latitude, longitude, course, speed, altitude) VALUES(?,?,?,?,?,?)"] &&
         [self bind:1 datetimeValue:[point timestamp]] &&
         [self bind:2 doubleValue:[point latitude]] &&
@@ -116,15 +212,76 @@
         [self bind:6 doubleValue:[point altitude]] &&
         [self stepAndFinalize])
     {
+        [self commitTransaction];
         key = [self insertedRow];
     }
     else
     {
+        [self rollbackTransaction];
         [self finalize];
     }
     
     return key;
     
+}
+
+/*
+ * Delete a point from the POINTS table
+ * Returns YES if successful, NO otherwise
+ */
+- (BOOL)deletePoint:(TrackPoint *)point
+{
+    BOOL rc = NO;
+    
+    [self beginTransaction];
+    
+    if ([self prepareStatement:@"DELETE FROM points where key=?"] &&
+        [self bind:1 intValue:[point key]] &&
+        [self stepAndFinalize])
+    {
+        rc = YES;
+    }
+    
+    if (rc == YES)
+    {
+        [self commitTransaction];
+    }
+    else
+    {
+        [self rollbackTransaction];
+    }
+    
+    return rc;
+}
+
+/*
+ * Find a TrackPoint instance with the given key
+ * Returns a TrackPoint instance, or nil if no instance was found
+ */
+- (TrackPoint *)findPoint:(int)key
+{
+    TrackPoint *point = nil;
+    
+    [self prepareStatement:@"SELECT * FROM tracks where key=?"];
+    [self bind:1 intValue:key];
+    int rc = [self step];
+    
+    if (rc == SQLITE_DONE)
+    {
+        point = [[TrackPoint alloc] init];
+        [point setKey:[self intColumn:1]];
+        [point setTimestamp:[self datetimeColumn:2]];
+        [point setLatitude:[self doubleColumn:3]];
+        [point setLongitude:[self doubleColumn:4]];
+        [point setCourse:[self doubleColumn:5]];
+        [point setSpeed:[self doubleColumn:6]];
+        [point setAltitude:[self doubleColumn:7]];
+        [point setTrack:[self intColumn:8]];
+    }
+    
+    [self finalize];
+    
+    return point;
 }
 
 /*

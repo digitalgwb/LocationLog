@@ -20,6 +20,7 @@
 @property CLLocationDistance altitude;
 @property (strong, atomic) NSDate* timestamp;
 @property NSInteger key;
+@property NSInteger track;
 
 - (id)initWithPoint:(CLLocationCoordinate2D)point
              course:(CLLocationDirection)course

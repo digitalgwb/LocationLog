@@ -164,6 +164,24 @@
 /*
  * SQLITE wrapper methods
  */
+- (void)beginTransaction
+{
+    char *error;
+    sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &error);
+}
+
+- (void)commitTransaction
+{
+    char *error;
+    sqlite3_exec(db, "COMMIT;", NULL, NULL, &error);
+}
+
+- (void)rollbackTransaction
+{
+    char *error;
+    sqlite3_exec(db, "ROLLBACK;", NULL, NULL, &error);
+}
+
 - (BOOL)prepareStatement:(NSString *)sql
 {
     return sqlite3_prepare(db, [sql UTF8String], -1, &statement, NULL);
@@ -179,7 +197,17 @@
     return sqlite3_bind_double(statement, column, value);
 }
 
-- (BOOL)step
+- (BOOL)bind:(int)column intValue:(int)value
+{
+    return sqlite3_bind_int(statement, column, value);
+}
+
+- (BOOL)bind:(int)column textValue:(NSString *)value
+{
+    return sqlite3_bind_text(statement, column, [value UTF8String], -1, SQLITE_TRANSIENT);
+}
+
+- (int)step
 {
     return sqlite3_step(statement);
 }
@@ -200,5 +228,27 @@
 - (int)insertedRow
 {
     return sqlite3_last_insert_rowid(db);
+}
+
+- (int)intColumn:(int)column
+{
+    return sqlite3_column_int(statement, column);
+}
+
+- (double)doubleColumn:(int)column
+{
+    return sqlite3_column_double(statement, column);
+}
+
+- (NSDate *)datetimeColumn:(int)column
+{
+    int i = sqlite3_column_int(statement, column);
+    return [NSDate dateWithTimeIntervalSinceNow:i];
+}
+
+- (NSString *)textColumn:(int)column
+{
+    const unsigned char *c = sqlite3_column_text(statement, column);
+    return [NSString stringWithUTF8String:(char *)c];
 }
 @end

@@ -18,6 +18,7 @@
 @synthesize altitude;
 @synthesize timestamp;
 @synthesize key;
+@synthesize track;
 
 - (id)initWithPoint:(CLLocationCoordinate2D)point
              course:(CLLocationDirection)pCourse
@@ -35,7 +36,7 @@
         speed = pSpeed;
         altitude = pAltitude;
         timestamp = [pTimestamp copy];
-        key = [pTrack key];
+        track = [pTrack key];
     }
     
     return self;
