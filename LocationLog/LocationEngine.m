@@ -49,6 +49,7 @@
 - (void)start
 {
     currentTrack = [[Track alloc] init];
+    [currentTrack setTimestamp:[NSDate date]];
     [currentTrack setKey:[[LocationLogDatabase instance] insertTrack:currentTrack]];
     [locationManager startUpdatingLocation];
 }

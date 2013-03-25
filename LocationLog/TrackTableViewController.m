@@ -10,6 +10,7 @@
 #import "TrackStore.h"
 #import "TrackCell.h"
 #import "Track.h"
+#import "PointTableViewController.h"
 
 @implementation TrackTableViewController
 
@@ -24,8 +25,6 @@
         [navItem setTitle:@"Tracks"];
         
         [[TrackStore sharedStore] initialize];
-        
-        [[self view] setBackgroundColor:[UIColor blackColor]];
     }
     
     return self;
@@ -57,10 +56,21 @@
     TrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell"];
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM/YY/dd HH:mm:ss"];
+    [df setDateFormat:@"MM/dd/YY HH:mm:ss"];
 
     [[cell timestamp] setText:[df stringFromDate:[track timestamp]]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Track *track = [[[TrackStore sharedStore] tracks] objectAtIndex:[indexPath row]];
+    
+    PointTableViewController *pointTableViewController = [[PointTableViewController alloc] init];
+    [pointTableViewController setTrackKey:[track key]];
+    
+    [[self navigationController] pushViewController:pointTableViewController animated:YES];
+    
 }
 @end

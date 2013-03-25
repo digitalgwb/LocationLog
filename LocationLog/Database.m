@@ -261,7 +261,7 @@
 - (NSDate *)datetimeColumn:(int)column
 {
     int i = sqlite3_column_int(statement, column);
-    return [NSDate dateWithTimeIntervalSinceNow:i];
+    return [NSDate dateWithTimeIntervalSince1970:i];
 }
 
 - (NSString *)textColumn:(int)column

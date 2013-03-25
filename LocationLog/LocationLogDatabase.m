@@ -152,9 +152,9 @@
     if (rc == SQLITE_DONE)
     {
         track = [[Track alloc] init];
-        [track setKey:[self intColumn:1]];
+        [track setKey:[self intColumn:0]];
+        [track setTimestamp:[self datetimeColumn:1]];
         [track setDescription:[self textColumn:2]];
-        [track setTimestamp:[self datetimeColumn:3]];
     }
     
     [self finalize];
@@ -167,18 +167,18 @@
     NSMutableArray *tracks = [[NSMutableArray alloc] init];
     
     [self prepareStatement:@"SELECT * FROM tracks ORDER BY timestamp"];
-    int rc = [self step];
     
-    while (rc != SQLITE_DONE)
+    while ([self step] == SQLITE_ROW)
     {
         Track *track = [[Track alloc] init];
-        [track setKey:[self intColumn:1]];
+        [track setKey:[self intColumn:0]];
+        NSDate *d = [self datetimeColumn:1];
+        NSLog(@"Date:%@", d);
+        
+        [track setTimestamp:[self datetimeColumn:1]];
         [track setDescription:[self textColumn:2]];
-        [track setTimestamp:[self datetimeColumn:3]];
         
         [tracks addObject:track];
-        
-        rc = [self step];
     }
     
     [self finalize];
@@ -201,14 +201,14 @@
     while (rc != SQLITE_DONE)
     {
         TrackPoint *point = [[TrackPoint alloc] init];
-        [point setKey:[self intColumn:1]];
-        [point setTimestamp:[self datetimeColumn:2]];
-        [point setLatitude:[self doubleColumn:3]];
-        [point setLongitude:[self doubleColumn:4]];
-        [point setCourse:[self doubleColumn:5]];
-        [point setSpeed:[self doubleColumn:6]];
-        [point setAltitude:[self doubleColumn:7]];
-        [point setTrack:[self intColumn:8]];
+        [point setKey:[self intColumn:0]];
+        [point setTimestamp:[self datetimeColumn:1]];
+        [point setLatitude:[self doubleColumn:2]];
+        [point setLongitude:[self doubleColumn:3]];
+        [point setCourse:[self doubleColumn:4]];
+        [point setSpeed:[self doubleColumn:5]];
+        [point setAltitude:[self doubleColumn:6]];
+        [point setTrack:[self intColumn:7]];
         
         [array addObject:point];
         rc = [self step];
@@ -315,14 +315,14 @@
     if (rc == SQLITE_DONE)
     {
         point = [[TrackPoint alloc] init];
-        [point setKey:[self intColumn:1]];
-        [point setTimestamp:[self datetimeColumn:2]];
-        [point setLatitude:[self doubleColumn:3]];
-        [point setLongitude:[self doubleColumn:4]];
-        [point setCourse:[self doubleColumn:5]];
-        [point setSpeed:[self doubleColumn:6]];
-        [point setAltitude:[self doubleColumn:7]];
-        [point setTrack:[self intColumn:8]];
+        [point setKey:[self intColumn:0]];
+        [point setTimestamp:[self datetimeColumn:1]];
+        [point setLatitude:[self doubleColumn:2]];
+        [point setLongitude:[self doubleColumn:3]];
+        [point setCourse:[self doubleColumn:4]];
+        [point setSpeed:[self doubleColumn:5]];
+        [point setAltitude:[self doubleColumn:6]];
+        [point setTrack:[self intColumn:7]];
     }
     
     [self finalize];

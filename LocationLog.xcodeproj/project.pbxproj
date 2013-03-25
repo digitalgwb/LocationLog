@@ -29,6 +29,7 @@
 		4E26B45216FCD4E6009B584A /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E26B45116FCD4E6009B584A /* TrackCell.xib */; };
 		4E26B45516FCD536009B584A /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E26B45416FCD536009B584A /* TrackCell.m */; };
 		4E86137116FB3C16003228D6 /* LocationLogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86137016FB3C16003228D6 /* LocationLogDatabase.m */; };
+		C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */; };
 		C372CF2516FAAD6200F1D2F6 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = C372CF2416FAAD6200F1D2F6 /* Database.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		4E26B45416FCD536009B584A /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		4E86136F16FB3C16003228D6 /* LocationLogDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationLogDatabase.h; sourceTree = "<group>"; };
 		4E86137016FB3C16003228D6 /* LocationLogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationLogDatabase.m; sourceTree = "<group>"; };
+		C3663ADD16FFD9D8004ADC23 /* PointTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTableViewController.h; sourceTree = "<group>"; };
+		C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointTableViewController.m; sourceTree = "<group>"; };
 		C372CF2316FAAD6200F1D2F6 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		C372CF2416FAAD6200F1D2F6 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 				4E26B45116FCD4E6009B584A /* TrackCell.xib */,
 				4E26B45316FCD536009B584A /* TrackCell.h */,
 				4E26B45416FCD536009B584A /* TrackCell.m */,
+				C3663ADD16FFD9D8004ADC23 /* PointTableViewController.h */,
+				C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */,
 			);
 			path = LocationLog;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				4E26B44D16FCCF77009B584A /* TrackTableViewController.m in Sources */,
 				4E26B45016FCD18F009B584A /* TrackStore.m in Sources */,
 				4E26B45516FCD536009B584A /* TrackCell.m in Sources */,
+				C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,7 +54,5 @@
     {
         [arrTracks addObject:[dbTracks objectAtIndex:i]];
     }
-    
-    int i = [arrTracks count];
 }
 @end
