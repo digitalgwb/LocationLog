@@ -29,6 +29,9 @@
 		4E26B45216FCD4E6009B584A /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E26B45116FCD4E6009B584A /* TrackCell.xib */; };
 		4E26B45516FCD536009B584A /* TrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E26B45416FCD536009B584A /* TrackCell.m */; };
 		4E86137116FB3C16003228D6 /* LocationLogDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E86137016FB3C16003228D6 /* LocationLogDatabase.m */; };
+		4E8E5BBB1702143800DB67AC /* TrackPointStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E5BBA1702143800DB67AC /* TrackPointStore.m */; };
+		4E8E5BBD1702178600DB67AC /* TrackPointCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8E5BBC1702178600DB67AC /* TrackPointCell.xib */; };
+		4E8E5BC017021B3600DB67AC /* TrackPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E5BBF17021B3600DB67AC /* TrackPointCell.m */; };
 		C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */; };
 		C372CF2516FAAD6200F1D2F6 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = C372CF2416FAAD6200F1D2F6 /* Database.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +71,11 @@
 		4E26B45416FCD536009B584A /* TrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCell.m; sourceTree = "<group>"; };
 		4E86136F16FB3C16003228D6 /* LocationLogDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationLogDatabase.h; sourceTree = "<group>"; };
 		4E86137016FB3C16003228D6 /* LocationLogDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationLogDatabase.m; sourceTree = "<group>"; };
+		4E8E5BB91702143800DB67AC /* TrackPointStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPointStore.h; sourceTree = "<group>"; };
+		4E8E5BBA1702143800DB67AC /* TrackPointStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPointStore.m; sourceTree = "<group>"; };
+		4E8E5BBC1702178600DB67AC /* TrackPointCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackPointCell.xib; sourceTree = "<group>"; };
+		4E8E5BBE17021B3500DB67AC /* TrackPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPointCell.h; sourceTree = "<group>"; };
+		4E8E5BBF17021B3600DB67AC /* TrackPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPointCell.m; sourceTree = "<group>"; };
 		C3663ADD16FFD9D8004ADC23 /* PointTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTableViewController.h; sourceTree = "<group>"; };
 		C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointTableViewController.m; sourceTree = "<group>"; };
 		C372CF2316FAAD6200F1D2F6 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
@@ -140,6 +148,9 @@
 				4E26B45416FCD536009B584A /* TrackCell.m */,
 				C3663ADD16FFD9D8004ADC23 /* PointTableViewController.h */,
 				C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */,
+				4E8E5BBC1702178600DB67AC /* TrackPointCell.xib */,
+				4E8E5BBE17021B3500DB67AC /* TrackPointCell.h */,
+				4E8E5BBF17021B3600DB67AC /* TrackPointCell.m */,
 			);
 			path = LocationLog;
 			sourceTree = "<group>";
@@ -167,6 +178,8 @@
 				4E0989A016F764AA005ED887 /* Track.m */,
 				4E26B44E16FCD18F009B584A /* TrackStore.h */,
 				4E26B44F16FCD18F009B584A /* TrackStore.m */,
+				4E8E5BB91702143800DB67AC /* TrackPointStore.h */,
+				4E8E5BBA1702143800DB67AC /* TrackPointStore.m */,
 			);
 			name = Tracks;
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 				4E09898D16F749B9005ED887 /* MainViewController.xib in Resources */,
 				4E0989A516F77872005ED887 /* README in Resources */,
 				4E26B45216FCD4E6009B584A /* TrackCell.xib in Resources */,
+				4E8E5BBD1702178600DB67AC /* TrackPointCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +276,8 @@
 				4E26B45016FCD18F009B584A /* TrackStore.m in Sources */,
 				4E26B45516FCD536009B584A /* TrackCell.m in Sources */,
 				C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */,
+				4E8E5BBB1702143800DB67AC /* TrackPointStore.m in Sources */,
+				4E8E5BC017021B3600DB67AC /* TrackPointCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

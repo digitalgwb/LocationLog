@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface TrackTableViewController : UITableViewController
+{
+    NSDateFormatter *dateFormatter;
+}
 
 @end

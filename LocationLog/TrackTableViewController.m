@@ -20,6 +20,9 @@
     
     if (self)
     {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/YY HH:mm:ss"];
+        
         UINavigationItem *navItem = [self navigationItem];
         
         [navItem setTitle:@"Tracks"];
@@ -55,10 +58,7 @@
     
     TrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell"];
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM/dd/YY HH:mm:ss"];
-
-    [[cell timestamp] setText:[df stringFromDate:[track timestamp]]];
+    [[cell timestamp] setText:[dateFormatter stringFromDate:[track timestamp]]];
     
     return cell;
 }
@@ -67,8 +67,7 @@
 {
     Track *track = [[[TrackStore sharedStore] tracks] objectAtIndex:[indexPath row]];
     
-    PointTableViewController *pointTableViewController = [[PointTableViewController alloc] init];
-    [pointTableViewController setTrackKey:[track key]];
+    PointTableViewController *pointTableViewController = [[PointTableViewController alloc] initWithTrack:track];
     
     [[self navigationController] pushViewController:pointTableViewController animated:YES];
     

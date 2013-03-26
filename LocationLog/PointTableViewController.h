@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class Track;
+
 @interface PointTableViewController : UITableViewController
+{
+    NSDateFormatter *dateFormatter;
+}
 
 @property NSInteger trackKey;
+
+- (id)initWithTrack:(Track *)track;
 
 @end
