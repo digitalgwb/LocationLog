@@ -34,6 +34,8 @@
 		4E8E5BC017021B3600DB67AC /* TrackPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8E5BBF17021B3600DB67AC /* TrackPointCell.m */; };
 		C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */; };
 		C372CF2516FAAD6200F1D2F6 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = C372CF2416FAAD6200F1D2F6 /* Database.m */; };
+		C392ED8B1702876A00392FE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C392ED8A1702876A00392FE6 /* MapKit.framework */; };
+		C392ED93170292F500392FE6 /* MapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C392ED92170292F500392FE6 /* MapTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,9 @@
 		C3663ADE16FFD9D8004ADC23 /* PointTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointTableViewController.m; sourceTree = "<group>"; };
 		C372CF2316FAAD6200F1D2F6 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		C372CF2416FAAD6200F1D2F6 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
+		C392ED8A1702876A00392FE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C392ED91170292F500392FE6 /* MapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableViewController.h; sourceTree = "<group>"; };
+		C392ED92170292F500392FE6 /* MapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C392ED8B1702876A00392FE6 /* MapKit.framework in Frameworks */,
 				4E09899416F75CDA005ED887 /* libsqlite3.0.dylib in Frameworks */,
 				4E09898816F7486A005ED887 /* CoreLocation.framework in Frameworks */,
 				4E09896B16F7484C005ED887 /* UIKit.framework in Frameworks */,
@@ -119,6 +125,7 @@
 		4E09896916F7484C005ED887 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C392ED8A1702876A00392FE6 /* MapKit.framework */,
 				4E09898716F7486A005ED887 /* CoreLocation.framework */,
 				4E09896A16F7484C005ED887 /* UIKit.framework */,
 				4E09896C16F7484C005ED887 /* Foundation.framework */,
@@ -151,6 +158,8 @@
 				4E8E5BBC1702178600DB67AC /* TrackPointCell.xib */,
 				4E8E5BBE17021B3500DB67AC /* TrackPointCell.h */,
 				4E8E5BBF17021B3600DB67AC /* TrackPointCell.m */,
+				C392ED91170292F500392FE6 /* MapTableViewController.h */,
+				C392ED92170292F500392FE6 /* MapTableViewController.m */,
 			);
 			path = LocationLog;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 				C3663ADF16FFD9D8004ADC23 /* PointTableViewController.m in Sources */,
 				4E8E5BBB1702143800DB67AC /* TrackPointStore.m in Sources */,
 				4E8E5BC017021B3600DB67AC /* TrackPointCell.m in Sources */,
+				C392ED93170292F500392FE6 /* MapTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

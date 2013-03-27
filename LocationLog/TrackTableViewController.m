@@ -11,6 +11,7 @@
 #import "TrackCell.h"
 #import "Track.h"
 #import "PointTableViewController.h"
+#import "MapTableViewController.h"
 
 @implementation TrackTableViewController
 
@@ -67,9 +68,11 @@
 {
     Track *track = [[[TrackStore sharedStore] tracks] objectAtIndex:[indexPath row]];
     
-    PointTableViewController *pointTableViewController = [[PointTableViewController alloc] initWithTrack:track];
+//    PointTableViewController *pointTableViewController = [[PointTableViewController alloc] initWithTrack:track];
     
-    [[self navigationController] pushViewController:pointTableViewController animated:YES];
-    
+//    [[self navigationController] pushViewController:pointTableViewController animated:YES];
+  
+    MapTableViewController *mapTableViewController = [[MapTableViewController alloc] initWithTrack:track];
+    [[self navigationController] pushViewController:mapTableViewController animated:YES];
 }
 @end
